@@ -4,13 +4,33 @@ using System.Windows;
 using System.Data.SqlClient;
 using System;
 using WpfApp4.View;
+using System.Windows.Media;
+using System.Collections.ObjectModel;
+using System.IO;
 
-namespace WpfApp4 {
+namespace WpfApp4
+{
 
     public class LoginViewModel : INotifyPropertyChanged
     {
         private UserModel _user; // Добавление объекта UserModel
         private RegisterViewModel _registerViewModel;
+        private bool isDarkTheme = true;
+        private string _selectedTheme;
+
+        public string SelectedTheme
+        {
+            get { return _selectedTheme; }
+            set
+            {
+                if (_selectedTheme != value)
+                {
+                    _selectedTheme = value;
+                    OnPropertyChanged(nameof(SelectedTheme));
+                    ChangeTheme(_selectedTheme);
+                }
+            }
+        }
 
         public UserModel User // Доступ к объекту UserModel
         {
@@ -22,9 +42,12 @@ namespace WpfApp4 {
             }
         }
 
+
         public ICommand RegisterCommand { get; private set; }
         public ICommand LoginCommand { get; private set; }
         public ICommand ClickCommand { get; private set; }
+        public ICommand ChangeThemeCommand { get; private set; }
+        public ObservableCollection<string> Styles { get; private set; }
 
         public LoginViewModel()
         {
@@ -33,8 +56,9 @@ namespace WpfApp4 {
             RegisterCommand = new RelayCommand(Register, CanRegister);
             LoginCommand = new RelayCommand(Login, CanLogin);
             ClickCommand = new RelayCommand(Switch);
+            ChangeThemeCommand = new RelayCommand(obj => ChangeTheme(obj as string));
+            Styles = new ObservableCollection<string> { "Light", "Dark" };
         }
-
         private void Register(object parameter)
         {
             // Используем _registerViewModel для выполнения регистрации
@@ -126,5 +150,13 @@ namespace WpfApp4 {
                 }
             }
         }
+        private void ChangeTheme(object parameter)
+        {
+            string style = parameter as string;
+            ((App)Application.Current).ChangeTheme(style);
+        }
+
     }
 }
+
+

@@ -6,59 +6,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp4" xmlns:view="clr-namespace:WpfApp4.View"
         mc:Ignorable="d"
-        Title="DataWindow" Height="163" Width="698" Background="Black">
+        Title="Окно с БД" Height="163" Width="698" Background="Black" Style="{DynamicResource TitleStyle}">
     <Window.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="3" Background="{TemplateBinding Background}">
-                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style x:Key="RegisterTextStyle" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="White"/>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Foreground" Value="Cyan"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
     </Window.Resources>
-    <Grid>
+    <Grid Style="{DynamicResource GridStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="Работа с БД" FontSize="16" FontWeight="Bold" Foreground="#FF4CAF50" Height="20" />
+        <TextBlock  Style="{DynamicResource TextBlockStyle}" Grid.Row="0" Text="Работа с БД" FontSize="16" FontWeight="Bold" Height="20" />
 
-        <DataGrid Grid.Row="1" ItemsSource="{Binding Users}" AutoGenerateColumns="True" Background="Black" Foreground="White" BorderBrush="{x:Null}" Name="fd" GridLinesVisibility="Horizontal">
+        <DataGrid Style="{DynamicResource DataGridStyle}" Grid.Row="1" ItemsSource="{Binding Users}" AutoGenerateColumns="True" Background="Black" Foreground="White" BorderBrush="{x:Null}" Name="fd" GridLinesVisibility="Horizontal">
             <DataGrid.Resources>
-                <!-- Стиль для ячеек -->
-                <Style TargetType="DataGridCell">
-                    <Setter Property="Background" Value="Black"/>
-                    <Setter Property="Foreground" Value="White"/>
-                </Style>
-                <!-- Стиль для заголовков столбцов -->
-                <Style TargetType="DataGridColumnHeader">
-                    <Setter Property="Background" Value="Black"/>
-                    <Setter Property="Foreground" Value="White"/>
-                </Style>
+                <Style TargetType="DataGridCell" BasedOn="{StaticResource DataGridCellStyle}" />
+                <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource DataGridColumnHeaderStyle}" />
+                <Style TargetType="DataGridCellsPanel" BasedOn="{StaticResource DataGridDataGridCellsPanel}"/>
+                <Style TargetType="DataGridCellsPresenter" BasedOn="{StaticResource DataGridCellsPresenter}"/>
+                <Style TargetType="DataGridColumnHeadersPresenter" BasedOn="{StaticResource DataGridColumnHeadersPresenter}"/>
+                <Style TargetType="DataGridRow" BasedOn="{StaticResource DataGridRow}"/>
+                <Style TargetType="DataGridRowHeader" BasedOn="{StaticResource DataGridRowHeader}"/>
             </DataGrid.Resources>
-            <!-- Здесь будут колонки и данные -->
         </DataGrid>
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal" Background="Black" HorizontalAlignment="Left">
-            <Button Content="Удалить" Command="{Binding DeleteCommand}" Width="100" Background="#FF4CAF50" Foreground="White" Height="21"/>
+        <StackPanel Style="{DynamicResource StackPanelStyle}" Grid.Row="2" Orientation="Horizontal" Background="Black" HorizontalAlignment="Left">
+            <Button  Content="Удалить" Command="{Binding DeleteCommand}" Width="100" Style="{DynamicResource ButtonStyle}" Height="21"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal" Background="Black" HorizontalAlignment="Right">
-            <Button Content="Редактировать" Command="{Binding EditCommand}" Width="100" Background="#FF4CAF50" Foreground="White" Height="21"/>
+            <Button Content="Редактировать" Command="{Binding EditCommand}" Width="100" Style="{DynamicResource ButtonStyle}" Height="21"/>
         </StackPanel>
     </Grid>
 </Window>

@@ -24,5 +24,6 @@ namespace WpfApp4.View
             InitializeComponent();
             DataContext = new FunctionsViewModel();
         }
+
     }
 }

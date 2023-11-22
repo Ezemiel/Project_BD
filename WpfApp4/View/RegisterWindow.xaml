@@ -6,40 +6,24 @@
         xmlns:local="clr-namespace:WpfApp4"
         d:DataContext="{d:DesignInstance Type=local:RegisterViewModel}"
         mc:Ignorable="d"
-        Title="Войти" Height="320" Width="200" Background="Black" ResizeMode="NoResize" MouseDown="Window_click" WindowStartupLocation="CenterScreen" WindowStyle="None" Icon="/View/icon.jpg">
-    <Window.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="3"
-                                Background="{TemplateBinding Background}">
-
-                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
-    <Grid>
+        Title="Окно регистрации" Height="320" Width="200" Background="Black" ResizeMode="NoResize" Style="{DynamicResource TitleStyle}" MouseDown="Window_click" WindowStartupLocation="CenterScreen" WindowStyle="None" Icon="/View/icon.jpg">
+    <Grid Style="{DynamicResource GridStyle}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="7*"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
-        <Grid Background="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" MaxWidth="150" Height="155" Grid.ColumnSpan="2">
-            <StackPanel>
-                <StackPanel>
-                    <TextBlock Text="Логин" VerticalAlignment="Stretch" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#FF4CAF50" Height="30"/>
-                    <TextBox Text="{Binding User.Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="25" Width="150" MaxWidth="150" Background="Black" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Grid Style="{DynamicResource GridStyle}" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" MaxWidth="150" Height="155" Grid.ColumnSpan="2">
+            <StackPanel Style="{DynamicResource StackPanelStyle}">
+                <StackPanel Style="{DynamicResource StackPanelStyle}">
+                    <TextBlock Text="Логин" VerticalAlignment="Stretch" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Style="{DynamicResource TextBlockStyle}" Height="30"/>
+                    <TextBox Text="{Binding User.Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="25" Width="150" MaxWidth="150" Style="{DynamicResource TextBoxStyle}"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel>
-                    <TextBlock Text="Пароль" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#FF4CAF50" VerticalAlignment="Center" Height="30"/>
-                    <TextBox Text="{Binding User.Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="25" Background="Black" Foreground="White" HorizontalAlignment="Center" Width="150" />
+                    <TextBlock Text="Пароль" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Style="{DynamicResource TextBlockStyle}"  VerticalAlignment="Center" Height="30"/>
+                    <TextBox Text="{Binding User.Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="25" Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Center" Width="150" />
                 </StackPanel>
             </StackPanel>
-            <Button Content="Зарегистрироваться" Command="{Binding RegisterCommand}" HorizontalAlignment="Center" Height="30" Background="#FF4CAF50" Foreground="White" Width="122" VerticalAlignment="Bottom"/>
+            <Button Content="Зарегистрироваться" Style="{DynamicResource ButtonStyle}" Command="{Binding RegisterCommand}" HorizontalAlignment="Center" Height="30" Width="122" VerticalAlignment="Bottom"/>
         </Grid>
     </Grid>
 </Window>

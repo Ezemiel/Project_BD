@@ -6,39 +6,8 @@
         xmlns:local="clr-namespace:WpfApp4"
         d:DataContext="{d:DesignInstance Type=local:LoginViewModel}"
         mc:Ignorable="d"
-        Title="Войти" Height="320" Width="200" Background="Black" WindowStyle="None" ResizeMode="NoResize" MouseDown="Window_click" WindowStartupLocation="CenterScreen" Icon="/View/icon.jpg">
-
-    <Window.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="3" Background="{TemplateBinding Background}">
-                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style x:Key="RegisterTextStyle" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="White"/>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Foreground" Value="Cyan"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-    </Window.Resources>
-
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="13*"/>
-            <ColumnDefinition Width="27*"/>
-            <ColumnDefinition Width="Auto"/>
-        </Grid.ColumnDefinitions>
-
+        Title="Окно авторизации" Height="323" Width="200" Background="{DynamicResource BackgroundBrush}" Style="{DynamicResource TitleStyle}" WindowStyle="None" ResizeMode="NoResize" MouseDown="Window_click" WindowStartupLocation="CenterScreen" Icon="/View/icon.jpg">
+    <Grid Style="{DynamicResource GridStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="251*"/>
@@ -46,23 +15,24 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Column="1" Grid.Row="1" Background="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" Grid.ColumnSpan="2">
-            <StackPanel Margin="10">
-                <TextBlock Text="Логин" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#FF4CAF50" Height="30"/>
-                <TextBox Text="{Binding User.Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxWidth="150"  Height="25" Background="Black" Foreground="White" Width="146"/>
+        <StackPanel Grid.Row="1" Style="{DynamicResource StackPanelStyle}"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" Height="238">
+            <StackPanel>
+                <TextBlock Text="Логин" Style="{DynamicResource TextBlockStyle}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Height="30"/>
+                <TextBox Text="{Binding User.Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource TextBoxStyle}" MaxWidth="150"  Height="25" Width="146"/>
             </StackPanel>
 
             <StackPanel Margin="10">
-                <TextBlock Text="Пароль" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#FF4CAF50" Height="30"/>
-                <TextBox Text="{Binding User.Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxWidth="150"  Height="25" Background="Black" Foreground="White" Width="150"/>
+                <TextBlock Text="Пароль" Style="{DynamicResource TextBlockStyle}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Height="30"/>
+                <TextBox Text="{Binding User.Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource TextBoxStyle}" MaxWidth="150"  Height="25" Width="150"/>
             </StackPanel>
 
-            <Button Content="Войти" Command="{Binding LoginCommand}" Margin="10" HorizontalAlignment="Center" Height="30" Background="#FF4CAF50" Foreground="White" Width="65"/>
-            <TextBlock Text="Регистрация" Style="{StaticResource RegisterTextStyle}" HorizontalAlignment="Center">
+            <Button Content="Войти" Command="{Binding LoginCommand}" Style="{DynamicResource ButtonStyle}" HorizontalAlignment="Center" Height="30" Width="65"/>
+            <TextBlock Text="Регистрация" Style="{DynamicResource RegisterTextStyle}" HorizontalAlignment="Center">
                 <TextBlock.InputBindings>
                     <MouseBinding Gesture="LeftClick" Command="{Binding ClickCommand}"/>
                 </TextBlock.InputBindings>
             </TextBlock>
+            <ComboBox x:Name="styleBox" ItemsSource="{Binding Styles}" SelectedItem="{Binding SelectedTheme, Mode=TwoWay}"  HorizontalAlignment="Center" Width="94"/>
         </StackPanel>
     </Grid>
 </Window>

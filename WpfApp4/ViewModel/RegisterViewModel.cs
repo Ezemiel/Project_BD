@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Windows;
 using System.Windows.Input;
+using WpfApp4.ViewModel;
 
 namespace WpfApp4
 {
@@ -104,6 +105,10 @@ namespace WpfApp4
                MessageBox.Show($"Ошибка при открытии окна регистрации: {ex.Message}");
                 // Или используйте другой механизм логирования
             }
+        }
+        private void ThemeChange(string style)
+        {
+            ThemeService.ChangeTheme(style);
         }
     }
 }
