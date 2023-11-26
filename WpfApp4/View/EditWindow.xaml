@@ -6,7 +6,7 @@
         d:DataContext="{d:DesignInstance Type=view:FunctionsViewModel}"
         xmlns:view="clr-namespace:WpfApp4.View"
         mc:Ignorable="d"
-        Title="Окно редактирования" Height="287" Width="200" Background="Black" Style="{DynamicResource TitleStyle}" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Icon="/View/icon.jpg">
+        Title="Окно редактирования" Height="342" Width="200" Background="Black" Style="{DynamicResource TitleStyle}" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Icon="/View/icon.jpg">
     <Grid Style="{DynamicResource GridStyle}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="7*"/>
@@ -15,8 +15,8 @@
         <Button Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource IconStyle}" Command="{Binding BackCommand}" BorderThickness="0" BorderBrush="Transparent">
             <Image Source="file:///C:/Users/admin/Pictures/31029add2feba58af429.png" Width="40" Height="36" Stretch="UniformToFill" />
         </Button>
-        <Grid Style="{DynamicResource GridStyle}" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150" MaxWidth="150" Height="204" Grid.ColumnSpan="2" Margin="25,0,0,0">
-            <StackPanel Style="{DynamicResource StackPanelStyle}" Height="178" VerticalAlignment="Top">
+        <Grid Style="{DynamicResource GridStyle}" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150" MaxWidth="150" Height="282" Grid.ColumnSpan="2" Margin="25,0,0,0">
+            <StackPanel Style="{DynamicResource StackPanelStyle}" Height="227" VerticalAlignment="Top" Margin="0,10,0,0">
                 <TextBlock Text="Выберите ID" VerticalAlignment="Stretch" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Style="{DynamicResource TextBlockStyle}" Height="30"/>
                 <ComboBox ItemsSource="{Binding Users}" SelectedItem="{Binding SelectedUser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ComboBoxStyle}" DisplayMemberPath="UserID"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="25"/>
                 <StackPanel>
@@ -24,8 +24,12 @@
                     <TextBox Text="{Binding NewUsername, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="25" Width="150" MaxWidth="150" Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel>
-                    <TextBlock Text="Изменить пароль" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Style="{DynamicResource TextBlockStyle}" VerticalAlignment="Center" Height="30"/>
-                    <TextBox Text="{Binding NewPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="25" Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Center" Width="150" />
+                    <TextBlock Text="Изменить дату" FontSize="16" FontWeight="Bold" Style="{DynamicResource TextBlockStyle}" Height="30" Width="144" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <DatePicker Style="{StaticResource DatePickerStyle}" SelectedDate="{Binding SelectedUser.RegistrationDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="25" Width="148" HorizontalAlignment="Center" DisplayDateStart="1999-01-01" SelectedDateFormat="Short" DisplayDate="1999-01-01" FirstDayOfWeek="Monday"/>
+                </StackPanel>
+                <StackPanel Height="66">
+                    <TextBlock Text="Изменить пароль" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Style="{DynamicResource TextBlockStyle}" Height="28"/>
+                    <TextBox Text="{Binding NewPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="29" Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Center" Width="150" />
                 </StackPanel>
             </StackPanel>
             <Button Content="Редактировать" Command="{Binding EditCommand}" HorizontalAlignment="Center" Height="30" Style="{DynamicResource ButtonStyle}" Foreground="White" Width="122" VerticalAlignment="Bottom"/>

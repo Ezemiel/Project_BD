@@ -40,6 +40,7 @@ namespace WpfApp4.View
                     _selectedUser = value;
                     OnPropertyChanged(nameof(SelectedUser));
                     (DeleteCommand as RelayCommand)?.RaiseCanExecuteChanged();
+                    UpdateRegistrationDate(); // Обновление RegistrationDate
                 }
             }
         }
@@ -86,6 +87,17 @@ namespace WpfApp4.View
             BackCommand = new RelayCommand(Back);
             DeleteCommand = new RelayCommand(Delete, CanDelete);
             LoadUsersFromDatabase();
+            SelectedUser = new UserModel(); // Проверьте, есть ли у вас конструктор по умолчанию
+            SelectedUser.RegistrationDate = new DateTime(1999, 1, 1); // Установка начальной даты
+        }
+
+        private void UpdateRegistrationDate()
+        {
+            if (SelectedUser != null)
+            {
+                SelectedUser.RegistrationDate = new DateTime(1999, 1, 1); // Установка начальной даты при выборе нового пользователя
+                OnPropertyChanged(nameof(SelectedUser));
+            }
         }
         private void LoadUsersFromDatabase()
         {
@@ -130,13 +142,14 @@ namespace WpfApp4.View
                     {
                         connection.Open();
 
-                        string updateQuery = "UPDATE Users1 SET Username = @NewUsername, Password = @NewPassword WHERE UserID = @UserID";
-                        SqlCommand updateCommand = new SqlCommand(updateQuery, connection);
-                        updateCommand.Parameters.AddWithValue("@NewUsername", NewUsername);
-                        updateCommand.Parameters.AddWithValue("@NewPassword", NewPassword);
-                        updateCommand.Parameters.AddWithValue("@UserID", SelectedUser.UserID);
+                    string updateQuery = "UPDATE Users1 SET Username = @NewUsername, Password = @NewPassword, RegistrationDate = @NewRegistrationDate WHERE UserID = @UserID";
+                    SqlCommand updateCommand = new SqlCommand(updateQuery, connection);
+                    updateCommand.Parameters.AddWithValue("@NewUsername", NewUsername);
+                    updateCommand.Parameters.AddWithValue("@NewPassword", NewPassword);
+                    updateCommand.Parameters.AddWithValue("@NewRegistrationDate", SelectedUser.RegistrationDate);
+                    updateCommand.Parameters.AddWithValue("@UserID", SelectedUser.UserID);
 
-                        int rowsAffected = updateCommand.ExecuteNonQuery();
+                    int rowsAffected = updateCommand.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Пользователь успешно обновлен!");
