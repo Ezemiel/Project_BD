@@ -98,7 +98,7 @@
     <Style x:Key="AppComboBoxToggleButtonStyle" TargetType="ToggleButton">
         <Setter Property="Background" Value="Black"/>
         <Setter Property="BorderBrush" Value="#FFACACAC"/>
-        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderThickness" Value="2"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToggleButton">
@@ -164,11 +164,12 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <Style x:Key="ListBoxItemStyle" TargetType="ListBoxItem">
+        <Setter Property="BorderThickness" Value="2"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ListBoxItem">
-                    <!-- TextBox для отображения данных пользователя -->
                     <TextBox Text="{Binding UserID}" Height="25" Background="Black" Foreground="White"/>
                 </ControlTemplate>
             </Setter.Value>
@@ -177,7 +178,7 @@
     <Style x:Key="ListBoxStyle" TargetType="ListBox">
         <Setter Property="Background" Value="Black"/>
         <Setter Property="Foreground" Value="White"/>
-        <!-- Другие сеттеры по необходимости -->
+        <Setter Property="BorderThickness" Value="2"/>
     </Style>
 
     <Style x:Key="IconStyle" TargetType="Button">
@@ -267,6 +268,7 @@
 
         <!-- Применение нового стиля к календарю внутри DatePicker -->
         <Setter Property="CalendarStyle" Value="{DynamicResource CalendarStyle}" />
+        <Setter Property="BorderThickness" Value="2"/>
     </Style>
 
 

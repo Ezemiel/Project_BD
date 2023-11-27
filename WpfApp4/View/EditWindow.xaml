@@ -25,11 +25,11 @@
                 </StackPanel>
                 <StackPanel>
                     <TextBlock Text="Изменить дату" FontSize="16" FontWeight="Bold" Style="{DynamicResource TextBlockStyle}" Height="30" Width="144" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <DatePicker Style="{StaticResource DatePickerStyle}" SelectedDate="{Binding SelectedUser.RegistrationDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="25" Width="148" HorizontalAlignment="Center" DisplayDateStart="1999-01-01" SelectedDateFormat="Short" DisplayDate="1999-01-01" FirstDayOfWeek="Monday"/>
+                    <DatePicker Style="{StaticResource DatePickerStyle}" SelectedDate="{Binding SelectedUser.RegistrationDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="25" Width="150" HorizontalAlignment="Center" DisplayDateStart="1999-01-01" SelectedDateFormat="Short" DisplayDate="1999-01-01" FirstDayOfWeek="Monday"/>
                 </StackPanel>
                 <StackPanel Height="66">
                     <TextBlock Text="Изменить пароль" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Style="{DynamicResource TextBlockStyle}" Height="28"/>
-                    <TextBox Text="{Binding NewPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="29" Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Center" Width="150" />
+                    <TextBox Text="{Binding NewPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Center" Height="25" Width="150" />
                 </StackPanel>
             </StackPanel>
             <Button Content="Редактировать" Command="{Binding EditCommand}" HorizontalAlignment="Center" Height="30" Style="{DynamicResource ButtonStyle}" Foreground="White" Width="122" VerticalAlignment="Bottom"/>
