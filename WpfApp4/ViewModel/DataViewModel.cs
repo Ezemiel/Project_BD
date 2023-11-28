@@ -31,6 +31,7 @@ namespace WpfApp4.View
         public ICommand EditCommand { get; private set; }
         public ICommand DeleteCommand { get; private set; }
         public ICommand AddCommand { get; private set; }
+        public ICommand SettingsCommand { get; private set; }
 
         public DataViewModel(DataGrid dataGrid) // Принимаем DataGrid в конструкторе
         {
@@ -44,6 +45,7 @@ namespace WpfApp4.View
             EditCommand = new RelayCommand(Edit);
             DeleteCommand = new RelayCommand(Delete);
             AddCommand = new RelayCommand(Add);
+            SettingsCommand = new RelayCommand(Settings);
 
             LoadData(null);
         }
@@ -105,6 +107,13 @@ namespace WpfApp4.View
         {
             AddWindow register = new AddWindow();
             register.Show();
+            Application.Current.Windows[0].Close();
+        }
+
+        private void Settings(object parameter)
+        {
+            SettingsWindow settings = new SettingsWindow();
+            settings.Show();
             Application.Current.Windows[0].Close();
         }
         protected virtual void OnPropertyChanged(string propertyName)

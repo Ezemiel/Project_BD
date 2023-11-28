@@ -102,6 +102,9 @@
     </Compile>
     <Compile Include="Model\RelayCommand.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="View\SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="Themes\Dark.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -142,6 +145,10 @@
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\SettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\User.cs" />
@@ -171,9 +178,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1684940504_mykaleidoscope-ru-p-raian-gosling-pricheski-pinterest-74.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\back.jpg" />
@@ -222,6 +226,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\adduserlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\usersettings.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -79,7 +79,10 @@ namespace WpfApp4.View
         public ICommand EditCommand { get; private set; }
         public ICommand BackCommand { get; private set; }
         public ICommand DeleteCommand { get; private set; }
-        
+        public ICommand LightThemeCommand { get; private set; }
+        public ICommand DarkThemeCommand { get; private set; }
+
+
 
         public FunctionsViewModel()
         {
@@ -87,6 +90,8 @@ namespace WpfApp4.View
             EditCommand = new RelayCommand(Edit, CanEdit);
             BackCommand = new RelayCommand(Back);
             DeleteCommand = new RelayCommand(Delete, CanDelete);
+            LightThemeCommand = new RelayCommand(LightTheme);
+            DarkThemeCommand = new RelayCommand(DarkTheme);
             LoadUsersFromDatabase();
             SelectedUser = new UserModel(); // Проверьте, есть ли у вас конструктор по умолчанию
             SelectedUser.RegistrationDate = new DateTime(1999, 1, 1); // Установка начальной даты
@@ -211,7 +216,17 @@ namespace WpfApp4.View
             DataWindow.Show();
             Application.Current.Windows[0].Close();
         }
+        private void LightTheme(object parameter)
+        {
+            Application.Current.Resources.MergedDictionaries.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("Themes/Light.xaml", UriKind.Relative) });
+        }
 
+        private void DarkTheme (object paramter)
+        {
+            Application.Current.Resources.MergedDictionaries.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("Themes/Dark.xaml", UriKind.Relative) });
+        }
         private bool CanEdit(object parameter)
         {
             return !string.IsNullOrWhiteSpace(NewUsername) && !string.IsNullOrWhiteSpace(NewPassword);
@@ -220,10 +235,6 @@ namespace WpfApp4.View
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-        private void ThemeChange(string style)
-        {
-            ThemeService.ChangeTheme(style);
         }
     }
 }

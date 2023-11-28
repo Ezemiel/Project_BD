@@ -42,5 +42,8 @@
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left">
             <Button Content="Добавить" Command="{Binding AddCommand}" Width="100" Style="{DynamicResource ButtonStyle}" Height="21" HorizontalAlignment="Stretch"/>
         </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Grid.RowSpan="2" Width="387">
+            <Button Content="Настройки" Command="{Binding SettingsCommand}" Width="100" Style="{DynamicResource ButtonStyle}" Height="22"/>
+        </StackPanel>
     </Grid>
 </Window>

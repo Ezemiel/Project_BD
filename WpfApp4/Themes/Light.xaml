@@ -237,4 +237,8 @@
     <Style x:Key="ImageStyleAdd" TargetType="Image">
         <Setter Property="Source" Value="C:\Users\admin\Documents\УП\Project\WpfApp4\Resources\adduserlight.png"/>
     </Style>
+
+    <Style x:Key="ImageStyleSettings" TargetType="Image">
+        <Setter Property="Source" Value="C:\Users\admin\Documents\УП\Project\WpfApp4\Resources\usersettingslight.png"/>
+    </Style>
 </ResourceDictionary>
