@@ -7,8 +7,6 @@
         xmlns:local="clr-namespace:WpfApp4" xmlns:view="clr-namespace:WpfApp4.View" d:DataContext="{d:DesignInstance Type=view:DataViewModel}"
         mc:Ignorable="d"
         Title="Окно с БД" Height="164" Width="698" Style="{DynamicResource TitleStyle}">
-    <Window.Resources>
-    </Window.Resources>
     <Grid Style="{DynamicResource GridStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>

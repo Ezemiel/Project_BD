@@ -4,7 +4,6 @@ using System.Data.SqlClient;
 using System.Windows;
 using System.Windows.Input;
 using WpfApp4.View;
-using WpfApp4.ViewModel;
 
 namespace WpfApp4
 {
@@ -45,8 +44,6 @@ namespace WpfApp4
         private void Register(object parameter)
         {
             string connectionString = "Data Source=DESKTOP-D3VB68L;Initial Catalog=Users;Integrated Security=True";
-            string username = User.Username;
-            string password = User.Password;
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -114,10 +111,6 @@ namespace WpfApp4
                MessageBox.Show($"Ошибка при открытии окна регистрации: {ex.Message}");
                 // Или используйте другой механизм логирования
             }
-        }
-        private void ThemeChange(string style)
-        {
-            ThemeService.ChangeTheme(style);
         }
     }
 }

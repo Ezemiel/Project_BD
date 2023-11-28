@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using WpfApp4.ViewModel;
+
 
 namespace WpfApp4.View
 {
@@ -119,10 +119,6 @@ namespace WpfApp4.View
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-        private void ThemeChange(string style)
-        {
-            ThemeService.ChangeTheme(style);
         }
     }
 

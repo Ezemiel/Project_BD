@@ -3,10 +3,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Markup;
-using WpfApp4.ViewModel;
 
 namespace WpfApp4.View
 {
