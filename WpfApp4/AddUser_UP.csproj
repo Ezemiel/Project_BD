@@ -85,6 +85,9 @@
     <Compile Include="ViewModel\FunctionsViewModel.cs" />
     <Compile Include="ViewModel\RegisterViewModel.cs" />
     <Compile Include="ViewModel\ThemeService.cs" />
+    <Compile Include="View\AddWindow.xaml.cs">
+      <DependentUpon>AddWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DataWindow.xaml.cs">
       <DependentUpon>DataWindow.xaml</DependentUpon>
     </Compile>
@@ -104,6 +107,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Light.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AddWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -169,15 +176,14 @@
     <None Include="Resources\1684940504_mykaleidoscope-ru-p-raian-gosling-pricheski-pinterest-74.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\icon.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\back.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\back.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\60789.png" />
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
@@ -189,6 +195,33 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\42323424.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\edituser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\edituserlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\deleteuser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\deleteuserlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\loginuser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\loginuserlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\adduser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\adduserlight.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

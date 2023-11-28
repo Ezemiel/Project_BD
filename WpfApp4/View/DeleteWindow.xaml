@@ -7,29 +7,17 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         d:DataContext="{d:DesignInstance Type=view:FunctionsViewModel}"
         mc:Ignorable="d"
-        Title="Окно удаления" Height="326" Width="200" Style="{DynamicResource TitleStyle}" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Icon="/View/icon.jpg">
-
-    <Window.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="3" Background="{TemplateBinding Background}">
-                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
-
+        Title="Окно удаления" Height="326" Width="200" Style="{DynamicResource TitleStyle}" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid Style="{DynamicResource GridStyle}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="7*"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Height="56" Grid.ColumnSpan="2">
+            <Image Style="{DynamicResource ImageStyleDelete}" Height="60" Width="57" VerticalAlignment="Top"/>
+        </StackPanel>
         <Button Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource IconStyle}" Command="{Binding BackCommand}" BorderThickness="0" BorderBrush="Transparent">
-            <Image Source="file:///C:/Users/admin/Pictures/31029add2feba58af429.png" Width="40" Height="36" Stretch="UniformToFill" />
+            <Image Source="C:\Users\katrovskiiEM\Documents\Project\WpfApp4\Resources\60789.png" Width="40" Height="36" Stretch="UniformToFill" />
         </Button>
         <Grid Style="{DynamicResource GridStyle}" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150" MaxWidth="150" Height="195" Grid.ColumnSpan="2" Margin="25,0,0,0">
             <StackPanel Style="{DynamicResource StackPanelStyle}">

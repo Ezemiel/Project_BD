@@ -6,15 +6,18 @@
         xmlns:local="clr-namespace:WpfApp4"
         d:DataContext="{d:DesignInstance Type=local:LoginViewModel}"
         mc:Ignorable="d"
-        Title="Окно авторизации" Height="323" Width="200" Background="{DynamicResource BackgroundBrush}" Style="{DynamicResource TitleStyle}" WindowStyle="None" ResizeMode="NoResize" MouseDown="Window_click" WindowStartupLocation="CenterScreen" Icon="/View/icon.jpg">
+        Title="Окно авторизации" Height="323" Width="200" Background="{DynamicResource BackgroundBrush}" Style="{DynamicResource TitleStyle}" WindowStyle="None" ResizeMode="NoResize" MouseDown="Window_click" WindowStartupLocation="CenterScreen">
     <Grid Style="{DynamicResource GridStyle}">
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="251*"/>
             <RowDefinition Height="53*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Width="60" Height="52" >
+            <Image Style="{DynamicResource ImageStyleLogin}" Height="52" Width="63"/>
+        </StackPanel>
         <StackPanel Grid.Row="1" Style="{DynamicResource StackPanelStyle}"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" Height="238">
             <StackPanel>
                 <TextBlock Text="Логин" Style="{DynamicResource TextBlockStyle}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Height="30"/>

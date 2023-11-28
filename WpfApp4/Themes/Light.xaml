@@ -136,7 +136,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Image Source="file:///C:/Users/admin/Pictures/light.png" Width="40" Height="36" Stretch="UniformToFill" />
+                    <Image Source="C:\Users\katrovskiiEM\Documents\Project\WpfApp4\Resources\42323424.png" Width="40" Height="36" Stretch="UniformToFill" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -222,6 +222,19 @@
         <Setter Property="CalendarStyle" Value="{DynamicResource CalendarStyle}" />
     </Style>
 
-
-
+    <Style x:Key="ImageStyleEdit" TargetType="Image">
+        <Setter Property="Source" Value="C:\Users\katrovskiiEM\Documents\Project\WpfApp4\Resources\edituserlight.png"/>
+    </Style>
+    
+    <Style x:Key="ImageStyleDelete" TargetType="Image">
+        <Setter Property="Source" Value="C:\Users\katrovskiiEM\Documents\Project\WpfApp4\Resources\deleteuserlight.png"/>
+    </Style>
+    
+    <Style x:Key="ImageStyleLogin" TargetType="Image">
+        <Setter Property="Source" Value="C:\Users\katrovskiiEM\Documents\Project\WpfApp4\Resources\loginuserlight.png"/>
+    </Style>
+    
+    <Style x:Key="ImageStyleAdd" TargetType="Image">
+        <Setter Property="Source" Value="C:\Users\katrovskiiEM\Documents\Project\WpfApp4\Resources\adduserlight.png"/>
+    </Style>
 </ResourceDictionary>

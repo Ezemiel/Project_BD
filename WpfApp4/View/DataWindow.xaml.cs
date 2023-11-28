@@ -35,7 +35,7 @@ namespace WpfApp4.View
         }
         private void ChangeTheme(string style)
         {
-            string themeFilePath = @"C:\Users\admin\Documents\УП\Project\WpfApp4\Themes\" + style + ".xaml";
+            string themeFilePath = @"C:\Users\katrovskiiEM\Documents\Project\WpfApp4\Themes\" + style + ".xaml";
 
             if (File.Exists(themeFilePath))
             {

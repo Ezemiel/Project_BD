@@ -185,7 +185,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Image Source="file:///C:/Users/admin/Pictures/31029add2feba58af429.png" Width="40" Height="36" Stretch="UniformToFill" />
+                    <Image Source="C:\Users\katrovskiiEM\Documents\Project\WpfApp4\Resources\60789.png" Width="40" Height="36" Stretch="UniformToFill" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -271,6 +271,20 @@
         <Setter Property="BorderThickness" Value="2"/>
     </Style>
 
+    <Style x:Key="ImageStyleEdit" TargetType="Image">
+        <Setter Property="Source" Value="C:\Users\katrovskiiEM\Documents\Project\WpfApp4\Resources\edituser.png"/>
+    </Style>
 
+    <Style x:Key="ImageStyleDelete" TargetType="Image">
+        <Setter Property="Source" Value="C:\Users\katrovskiiEM\Documents\Project\WpfApp4\Resources\deleteuser.png"/>
+    </Style>
+    
+    <Style x:Key="ImageStyleLogin" TargetType="Image">
+        <Setter Property="Source" Value="C:\Users\katrovskiiEM\Documents\Project\WpfApp4\Resources\loginuser.png"/>
+    </Style>
 
+    <Style x:Key="ImageStyleAdd" TargetType="Image">
+        <Setter Property="Source" Value="C:\Users\katrovskiiEM\Documents\Project\WpfApp4\Resources\adduser.png"/>
+    </Style>
+    
 </ResourceDictionary>

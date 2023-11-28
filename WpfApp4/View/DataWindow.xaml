@@ -4,21 +4,24 @@
         SizeToContent="Height"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp4" xmlns:view="clr-namespace:WpfApp4.View"
+        xmlns:local="clr-namespace:WpfApp4" xmlns:view="clr-namespace:WpfApp4.View" d:DataContext="{d:DesignInstance Type=view:DataViewModel}"
         mc:Ignorable="d"
-        Title="Окно с БД" Height="163" Width="698" Background="Black" Style="{DynamicResource TitleStyle}">
+        Title="Окно с БД" Height="164" Width="698" Style="{DynamicResource TitleStyle}">
     <Window.Resources>
     </Window.Resources>
     <Grid Style="{DynamicResource GridStyle}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="22"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
 
         <TextBlock  Style="{DynamicResource TextBlockStyle}" Grid.Row="0" Text="Работа с БД" FontSize="16" FontWeight="Bold" Height="20" />
 
-        <DataGrid Style="{DynamicResource DataGridStyle}" Grid.Row="1" ItemsSource="{Binding Users}" AutoGenerateColumns="True" Background="Black" Foreground="White" BorderBrush="{x:Null}" Name="fd" GridLinesVisibility="Horizontal">
+        <DataGrid Style="{DynamicResource DataGridStyle}" Grid.Row="1" ItemsSource="{Binding Users}" AutoGenerateColumns="True"  BorderBrush="{x:Null}" Name="fd" GridLinesVisibility="Horizontal">
             <DataGrid.Resources>
                 <Style TargetType="DataGridCell" BasedOn="{StaticResource DataGridCellStyle}" />
                 <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource DataGridColumnHeaderStyle}" />
@@ -30,11 +33,14 @@
             </DataGrid.Resources>
         </DataGrid>
 
-        <StackPanel Style="{DynamicResource StackPanelStyle}" Grid.Row="2" Orientation="Horizontal" Background="Black" HorizontalAlignment="Left">
-            <Button  Content="Удалить" Command="{Binding DeleteCommand}" Width="100" Style="{DynamicResource ButtonStyle}" Height="21"/>
+        <StackPanel Style="{DynamicResource StackPanelStyle}" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button  Content="Удалить" Command="{Binding DeleteCommand}" Width="100" Style="{DynamicResource ButtonStyle}" Height="21" HorizontalAlignment="Stretch"/>
         </StackPanel>
-        <StackPanel Grid.Row="2" Orientation="Horizontal" Background="Black" HorizontalAlignment="Right">
-            <Button Content="Редактировать" Command="{Binding EditCommand}" Width="100" Style="{DynamicResource ButtonStyle}" Height="21"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Background="Black" HorizontalAlignment="Center">
+            <Button Content="Редактировать" Command="{Binding EditCommand}" Width="100" Style="{DynamicResource ButtonStyle}" Height="21" HorizontalAlignment="Stretch"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left">
+            <Button Content="Добавить" Command="{Binding AddCommand}" Width="100" Style="{DynamicResource ButtonStyle}" Height="21" HorizontalAlignment="Stretch"/>
         </StackPanel>
     </Grid>
 </Window>
