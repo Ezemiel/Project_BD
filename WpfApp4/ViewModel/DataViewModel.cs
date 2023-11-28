@@ -52,12 +52,12 @@ namespace WpfApp4.View
         {
             try
             {
-                string connectionString = "Data Source=dbs.mssql.app.biik.ru;Initial Catalog=Users;Integrated Security=True";
+                string connectionString = "Data Source=DESKTOP-D3VB68L;Initial Catalog=Users;Integrated Security=True";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
 
-                    string query = "SELECT UserID, Username, Password, RegistrationDate FROM Users"; // Измените запрос на выборку нужных полей
+                    string query = "SELECT UserID, Username, Password, RegistrationDate FROM Users1"; // Измените запрос на выборку нужных полей
                     SqlCommand command = new SqlCommand(query, connection);
 
                     SqlDataAdapter adapter = new SqlDataAdapter(command);

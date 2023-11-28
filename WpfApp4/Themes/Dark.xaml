@@ -68,23 +68,23 @@
     
     <Style x:Key="DataGridCellsPresenter" TargetType="DataGridCellsPresenter">
         <Setter Property="Background" Value="Black" />
-        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Foreground" Value="White"/>
     </Style>
 
     <Style x:Key="DataGridColumnHeadersPresenter" TargetType="DataGridColumnHeadersPresenter">
         <Setter Property="Foreground" Value="Black" />
-        <Setter Property="Background" Value="Black"/>
+        <Setter Property="Background" Value="White"/>
     </Style>
 
     <Style x:Key="DataGridRow" TargetType="DataGridRow">
         <Setter Property="Background" Value="Black" />
-        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Foreground" Value="White" />
     </Style>
 
 
     <Style x:Key="DataGridRowHeader" TargetType="DataGridRowHeader">
         <Setter Property="Foreground" Value="Black" />
-        <Setter Property="Background" Value="Black"/>
+        <Setter Property="Background" Value="White"/>
     </Style>
     
     <Style x:Key="RegisterTextStyle" TargetType="TextBlock">
@@ -185,7 +185,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Image Source="C:\Users\katrovskiiEM\Documents\Project\WpfApp4\Resources\60789.png" Width="40" Height="36" Stretch="UniformToFill" />
+                    <Image Source="C:\Users\admin\Documents\УП\Project\WpfApp4\Resources\60789.png" Width="40" Height="36" Stretch="UniformToFill" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -272,19 +272,19 @@
     </Style>
 
     <Style x:Key="ImageStyleEdit" TargetType="Image">
-        <Setter Property="Source" Value="C:\Users\katrovskiiEM\Documents\Project\WpfApp4\Resources\edituser.png"/>
+        <Setter Property="Source" Value="C:\Users\admin\Documents\УП\Project\WpfApp4\Resources\edituser.png"/>
     </Style>
 
     <Style x:Key="ImageStyleDelete" TargetType="Image">
-        <Setter Property="Source" Value="C:\Users\katrovskiiEM\Documents\Project\WpfApp4\Resources\deleteuser.png"/>
+        <Setter Property="Source" Value="C:\Users\admin\Documents\УП\Project\WpfApp4\Resources\deleteuser.png"/>
     </Style>
     
     <Style x:Key="ImageStyleLogin" TargetType="Image">
-        <Setter Property="Source" Value="C:\Users\katrovskiiEM\Documents\Project\WpfApp4\Resources\loginuser.png"/>
+        <Setter Property="Source" Value="C:\Users\admin\Documents\УП\Project\WpfApp4\Resources\loginuser.png"/>
     </Style>
 
     <Style x:Key="ImageStyleAdd" TargetType="Image">
-        <Setter Property="Source" Value="C:\Users\katrovskiiEM\Documents\Project\WpfApp4\Resources\adduser.png"/>
+        <Setter Property="Source" Value="C:\Users\admin\Documents\УП\Project\WpfApp4\Resources\adduser.png"/>
     </Style>
     
 </ResourceDictionary>

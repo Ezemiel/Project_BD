@@ -17,7 +17,7 @@
             <Image Style="{DynamicResource ImageStyleDelete}" Height="60" Width="57" VerticalAlignment="Top"/>
         </StackPanel>
         <Button Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource IconStyle}" Command="{Binding BackCommand}" BorderThickness="0" BorderBrush="Transparent">
-            <Image Source="C:\Users\katrovskiiEM\Documents\Project\WpfApp4\Resources\60789.png" Width="40" Height="36" Stretch="UniformToFill" />
+            <Image Source="\Resources\60789.png" Width="40" Height="36" Stretch="UniformToFill" />
         </Button>
         <Grid Style="{DynamicResource GridStyle}" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150" MaxWidth="150" Height="195" Grid.ColumnSpan="2" Margin="25,0,0,0">
             <StackPanel Style="{DynamicResource StackPanelStyle}">

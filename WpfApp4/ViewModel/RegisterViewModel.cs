@@ -44,7 +44,7 @@ namespace WpfApp4
 
         private void Register(object parameter)
         {
-            string connectionString = "Data Source=dbs.mssql.app.biik.ru;Initial Catalog=Users;Integrated Security=True";
+            string connectionString = "Data Source=DESKTOP-D3VB68L;Initial Catalog=Users;Integrated Security=True";
             string username = User.Username;
             string password = User.Password;
             try
@@ -53,7 +53,7 @@ namespace WpfApp4
                 {
                     connection.Open();
 
-                    string checkUserQuery = $"SELECT COUNT(*) FROM Users WHERE Username = @Username";
+                    string checkUserQuery = $"SELECT COUNT(*) FROM Users1 WHERE Username = @Username";
                     SqlCommand checkUserCommand = new SqlCommand(checkUserQuery, connection);
                     checkUserCommand.Parameters.AddWithValue("@Username", User.Username);
                     int existingUserCount = (int)checkUserCommand.ExecuteScalar();
@@ -64,7 +64,7 @@ namespace WpfApp4
                         return;
                     }
 
-                    string insertQuery = "INSERT INTO Users (Username, Password, RegistrationDate) VALUES (@Username, @Password, @RegistrationDate)";
+                    string insertQuery = "INSERT INTO Users1 (Username, Password, RegistrationDate) VALUES (@Username, @Password, @RegistrationDate)";
                     SqlCommand insertCommand = new SqlCommand(insertQuery, connection);
                     insertCommand.Parameters.AddWithValue("@Username", User.Username);
                     insertCommand.Parameters.AddWithValue("@Password", User.Password);

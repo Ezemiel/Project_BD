@@ -104,12 +104,12 @@ namespace WpfApp4.View
         {
             try
             {
-                string connectionString = "Data Source=dbs.mssql.app.biik.ru;Initial Catalog=Users;Integrated Security=True";
+                string connectionString = "Data Source=DESKTOP-D3VB68L;Initial Catalog=Users;Integrated Security=True";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
 
-                    string query = "SELECT UserID, Username, Password FROM Users";
+                    string query = "SELECT UserID, Username, Password FROM Users1";
                     SqlCommand command = new SqlCommand(query, connection);
 
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -137,12 +137,12 @@ namespace WpfApp4.View
         {
             try
             {
-                    string connectionString = "Data Source = dbs.mssql.app.biik.ru; Initial Catalog = Users; Integrated Security = True";
+                    string connectionString = "Data Source=DESKTOP-D3VB68L;Initial Catalog=Users;Integrated Security=True";
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
                         connection.Open();
 
-                    string updateQuery = "UPDATE Users SET Username = @NewUsername, Password = @NewPassword, RegistrationDate = @NewRegistrationDate WHERE UserID = @UserID";
+                    string updateQuery = "UPDATE Users1 SET Username = @NewUsername, Password = @NewPassword, RegistrationDate = @NewRegistrationDate WHERE UserID = @UserID";
                     SqlCommand updateCommand = new SqlCommand(updateQuery, connection);
                     updateCommand.Parameters.AddWithValue("@NewUsername", NewUsername);
                     updateCommand.Parameters.AddWithValue("@NewPassword", NewPassword);
@@ -173,12 +173,12 @@ namespace WpfApp4.View
         {
             try
             {
-                string connectionString = "Data Source=dbs.mssql.app.biik.ru;Initial Catalog=Users;Integrated Security=True";
+                string connectionString = "Data Source=DESKTOP-D3VB68L;Initial Catalog=Users;Integrated Security=True";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
 
-                    string deleteQuery = "DELETE FROM Users WHERE UserID = @UserID";
+                    string deleteQuery = "DELETE FROM Users1 WHERE UserID = @UserID";
                     SqlCommand deleteCommand = new SqlCommand(deleteQuery, connection);
                     deleteCommand.Parameters.AddWithValue("@UserID", SelectedUser.UserID);
 
